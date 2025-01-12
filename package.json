@@ -1,0 +1,24 @@
+{
+  "name": "javascript-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanshekhar23/javascript-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumanshekhar23/javascript-action/issues"
+  },
+  "homepage": "https://github.com/sumanshekhar23/javascript-action#readme",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  }
+}
