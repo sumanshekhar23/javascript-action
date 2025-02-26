@@ -1,0 +1,12 @@
+ame: "Main Workflow"
+on:
+  push:
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+  use-output:
+    needs: call-reusable
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Main workflow sees my-output: ${{ needs.call-reusable.outputs.my-output }}"
+        shell: bash
