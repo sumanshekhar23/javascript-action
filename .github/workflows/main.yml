@@ -1,4 +1,4 @@
-ame: "Main Workflow"
+name: "Main Workflow"
 on:
   push:
 jobs:
