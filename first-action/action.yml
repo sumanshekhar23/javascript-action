@@ -10,5 +10,6 @@ runs:
     - name: Run JavaScript Action
       id: run-js
       uses: ./js-action # Relative path assuming js-action is a subfolder
-    - run: echo "First action sees my-output: ${{ steps.run-js.outputs.my-output }}"
+    - run: |
+        echo "First action sees my-output: ${{ steps.run-js.outputs.my-output }}"
       shell: bash
