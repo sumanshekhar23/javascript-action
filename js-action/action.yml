@@ -1,0 +1,9 @@
+name: "JavaScript Action"
+description: "Sets an output via index.js"
+outputs:
+  my-output:
+    description: "Output from helper.js"
+    value: ${{ steps.main.outputs.my-output }}
+runs:
+  using: "node16"
+  main: "index.js"
