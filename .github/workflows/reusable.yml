@@ -1,0 +1,21 @@
+name: "Reusable Workflow"
+on:
+  workflow_call:
+    outputs:
+      my-output:
+        description: "Output from first action"
+        value: ${{ jobs.run-action.outputs.my-output }}
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    outputs:
+      my-output: ${{ steps.first-action-step.outputs.my-output }}
+    steps:
+      - uses: actions/checkout@v4 # Needed to access local actions
+      - name: Run First Action
+        id: first-action-step
+        uses: ./first-action # Relative path assuming first-action is a subfolder
+      - run: |
+          echo "Reusable workflow sees my-output: ${{ steps.first-action-step.outputs.my-output }}"
+        shell: bash
