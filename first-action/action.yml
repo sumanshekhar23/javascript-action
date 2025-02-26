@@ -1,0 +1,14 @@
+name: "First Action"
+description: "Calls the JavaScript action"
+outputs:
+  my-output:
+    description: "Output from JS action"
+    value: ${{ steps.run-js.outputs.my-output }}
+runs:
+  using: "composite"
+  steps:
+    - name: Run JavaScript Action
+      id: run-js
+      uses: ./js-action # Relative path assuming js-action is a subfolder
+    - run: echo "First action sees my-output: ${{ steps.run-js.outputs.my-output }}"
+      shell: bash
